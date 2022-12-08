@@ -3,7 +3,7 @@ import twstock
 import schedule
 import time
 from datetime import datetime
-import os
+import sys
 
 def LinNotifyMessage(token,msg):
     headers = {
@@ -40,6 +40,5 @@ if __name__ == "__main__":
                 print("還沒到")
                 time.sleep(2)
         else:
-            print("收盤了")
-            os._exit()
+            sys.exit("收盤了")
         
