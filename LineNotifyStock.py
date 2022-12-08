@@ -32,13 +32,14 @@ if __name__ == "__main__":
     now = int(datetime.now().strftime("%H%M%S"))
 
     while True:
-        if(stock_price > target_price):
-            if(now > open_time and now < close_time):
+        if(now > open_time and now < close_time):
+            if(stock_price > target_price):
                 schedule.run_pending()
                 time.sleep(2)
             else:
-                print("收盤了")
-                os._exit()
+                print("還沒到")
+                time.sleep(2)
         else:
-            print("還沒到")
-            time.sleep(2)
+            print("收盤了")
+            os._exit()
+        
